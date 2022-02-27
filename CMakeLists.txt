@@ -5,5 +5,19 @@ cmake_minimum_required (VERSION 3.8)
 
 project ("ELECTRON")
 
+
+
+add_subdirectory("${CMAKE_SOURCE_DIR}/Dependencies/glfw/")
+add_subdirectory("${CMAKE_SOURCE_DIR}/Dependencies/glew/")
+add_subdirectory("${CMAKE_SOURCE_DIR}/Dependencies/assimp/")
+add_subdirectory("${CMAKE_SOURCE_DIR}/Dependencies/glm/")
+
 # Include sub-projects.
 add_subdirectory ("ELECTRON")
+
+
+
+target_include_directories(${PROJECT_NAME}    PUBLIC ${CMAKE_SOURCE_DIR}/Dependencies/glfw/include )
+target_include_directories(${PROJECT_NAME}    PUBLIC ${CMAKE_SOURCE_DIR}/Dependencies/glew/include )
+target_include_directories(${PROJECT_NAME}    PUBLIC ${CMAKE_SOURCE_DIR}/Dependencies/assimp/include )
+target_include_directories(${PROJECT_NAME}    PUBLIC ${CMAKE_SOURCE_DIR}/Dependencies/glm/)
