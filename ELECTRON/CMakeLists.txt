@@ -12,6 +12,7 @@ file(GLOB Filles
 "${CMAKE_SOURCE_DIR}/ELECTRON/Core/Camera/*.cpp"
 "${CMAKE_SOURCE_DIR}/ELECTRON/Core/Shader/*.cpp"
 "${CMAKE_SOURCE_DIR}/ELECTRON/Core/Event/*.cpp"
+"${CMAKE_SOURCE_DIR}/ELECTRON/Core/Model/*.cpp"
 )
 
 

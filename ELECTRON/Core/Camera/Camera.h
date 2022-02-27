@@ -7,26 +7,28 @@
 #include "Event/mouse.h"
 
 
-namespace Core
-{
 
 
-    enum Camera_Movement
+
+    enum class Camera_Movement
     {
         FORWARD,
         BACKWARD,
         LEFT,
         RIGHT
     };
-    const float YAW = -90.0f;
-    const float PITCH = 0.0f;
-    const float SPEED = 0.0015f;
-    const float SENSITIVITY = 0.1f;
-    const float ZOOM = 45.0f;
-
+    
+namespace Core
+{
     class Camera
     {
+
     private:
+        const float YAW = -90.0f;
+        const float PITCH = 0.0f;
+        const float SPEED = 0.0015f;
+        const float SENSITIVITY = 0.1f;
+        const float ZOOM = 45.0f;
         // camera Attributes
         glm::vec3 Position;
         glm::vec3 Front;
