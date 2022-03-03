@@ -7,17 +7,18 @@
 
 namespace Core
 {
+	
+	
 
 	class Window final
 	{
 	public:
 
-	public:
-
-
 		std::string name;
-		int width;
-		int height;
+		int m_width;
+		int m_height;
+
+		
 		GLFWwindow* window = nullptr;
 	public:
 		Window(const Window&) = delete;
@@ -37,6 +38,7 @@ namespace Core
 	public:
 		void init(const std::string& name, int width, int height);
 		__forceinline GLFWwindow* getGLFWwindow() const { return window; }
+		
 	private:
 		static void window_size_callback(GLFWwindow* window, int width, int height);
 	};

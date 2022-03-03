@@ -18,7 +18,7 @@ namespace Core
 		std::vector<Texture> textures_loaded;
 
 	public:
-		Model(char* path);
+		Model(std::string path);
 		void Draw(Core::Shader& shader);
 
 	private:

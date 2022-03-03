@@ -1,12 +1,19 @@
-#pragma once
+#ifndef KEYBOARD_H
+#define KEYBOARD_H
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
+/*
+    keyboard class to handle keyboard callbacks
+*/
 
 class Keyboard {
 public:
-    
+    /*
+        static callback
+    */
+
     // key state changed
     static void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
 
@@ -37,3 +44,4 @@ private:
     static bool keysChanged[];
 };
 
+#endif

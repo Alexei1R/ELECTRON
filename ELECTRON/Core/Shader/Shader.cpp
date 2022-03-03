@@ -5,11 +5,11 @@
 #include <streambuf>
 
 
-Core::Shader::Shader(const char* vertexShader, const char* fragmentShader)
+Core::Shader::Shader(std::string vertexShader, std::string fragmentShader)
 	:program(0)
 {
-	vertexData = LoadShaderSRC(vertexShader);
-	fragmentData = LoadShaderSRC(fragmentShader);
+	vertexData = LoadShaderSRC(vertexShader.c_str());
+	fragmentData = LoadShaderSRC(fragmentShader.c_str());
 
 
 	CreateShader();

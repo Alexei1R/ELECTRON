@@ -15,10 +15,10 @@ Core::Window::Window(const std::string& name, int width, int height)
 void Core::Window::init(const std::string& name, int width, int height)
 {
 
-
+	
 	this->name = name;
-	this->width = width;
-	this->height = height;
+	this->m_width = width;
+	this->m_height = height;
 
 	// check glfw init
 
@@ -55,7 +55,10 @@ void Core::Window::init(const std::string& name, int width, int height)
 
 void Core::Window::window_size_callback(GLFWwindow* window, int width, int height)
 {
+	
 	glViewport(0, 0, width, height);
+
+	
 }
 
 void Core::Window::SetClearColor(glm::vec3 color)
@@ -67,7 +70,7 @@ void Core::Window::SetClearColor(glm::vec3 color)
 void Core::Window::Update()
 {
 
-	//if (Keyboard::key(GLFW_KEY_ESCAPE)) { glfwSetWindowShouldClose(window, GLFW_TRUE); }
+	if (Keyboard::key(GLFW_KEY_ESCAPE)) { glfwSetWindowShouldClose(window, GLFW_TRUE); }
 	if (Keyboard::key(GLFW_KEY_F1)) { glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED); }
 	if (Keyboard::key(GLFW_KEY_F2)) { glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL); }
 

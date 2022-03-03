@@ -1,8 +1,8 @@
 #include "Model/Model.h"
 
-Core::Model::Model( char* path)
+Core::Model::Model( std::string path)
 {
-	loadModel(path);
+	loadModel(path.c_str());
 }
 
 void Core::Model::Draw(Core::Shader& shader)

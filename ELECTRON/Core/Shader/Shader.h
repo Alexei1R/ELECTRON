@@ -18,7 +18,7 @@ namespace Core
 		std::unordered_map<std::string, int > m_UniformLocationCache;
 
 	public:
-		Shader(const char* vertexShader, const char* fragmentShader);
+		Shader(std::string vertexShader, std::string fragmentShader);
 		void Bind();
 		void UnBind();
 		//   Set Uniform  

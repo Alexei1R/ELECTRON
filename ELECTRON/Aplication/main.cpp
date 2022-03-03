@@ -1,9 +1,10 @@
 #include <iostream>
 #include "MainLoop.h"
 
-int main(int argc,char* args[]) 
 
+int main() 
 {
+	
 
 	// RUN aplication
 	App::RUN();

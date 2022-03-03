@@ -4,7 +4,6 @@
 cmake_minimum_required (VERSION 3.8)
 
 
-set(PathToFille )
 
 file(GLOB Filles 
 "${CMAKE_SOURCE_DIR}/ELECTRON/Aplication/*.cpp"
@@ -13,6 +12,7 @@ file(GLOB Filles
 "${CMAKE_SOURCE_DIR}/ELECTRON/Core/Shader/*.cpp"
 "${CMAKE_SOURCE_DIR}/ELECTRON/Core/Event/*.cpp"
 "${CMAKE_SOURCE_DIR}/ELECTRON/Core/Model/*.cpp"
+"${CMAKE_SOURCE_DIR}/ELECTRON/Core/Engine/Transform/*.cpp"
 )
 
 
@@ -27,6 +27,7 @@ add_executable (ELECTRON ${Filles} )
 
 include_directories(&{PROJECT_NAME}  ${CMAKE_SOURCE_DIR}/ELECTRON/Aplication)
 include_directories(&{PROJECT_NAME}  ${CMAKE_SOURCE_DIR}/ELECTRON/Core)
+include_directories(&{PROJECT_NAME}  ${CMAKE_SOURCE_DIR}/ELECTRON/)
 
 
 
