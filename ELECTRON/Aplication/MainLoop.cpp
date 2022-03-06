@@ -18,7 +18,7 @@ void App::RUN()
 	
 	Core::Shader shader (relpath + "/Electron/Stuff/vs.glsl", relpath + "/Electron/Stuff/fs.glsl");
 	shader.Bind();
-	Core::Model model (relpath + "/Electron/ASSETS/Model/car2.fbx");
+	Core::Model model (relpath + "/Electron/ASSETS/Model/csrtest.fbx");
 	
 	Core::Camera camera(glm::vec3(0.0, 0.0, 3.0));
 
@@ -29,7 +29,6 @@ void App::RUN()
 	
 
 	
-
 
 
 	int w, h;
@@ -43,6 +42,10 @@ void App::RUN()
 
 
 
+
+
+
+		
 		model.Draw(shader);
 
 
