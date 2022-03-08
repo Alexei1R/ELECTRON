@@ -17,8 +17,10 @@ uniform Material material;
 void main()
 {
 	
-  // FragColor = texture(material.texture_diffuse1,Texcordinates);// * vec4(1.0,Texcordinates,1.0);
-   FragColor = vec4(vec3(gl_FragCoord.z),1.0);
+ //FragColor = texture(material.texture_diffuse1,Texcordinates);// * vec4(1.0,Texcordinates,1.0);
+ FragColor = texture(material.texture_diffuse1,Texcordinates);// * vec4(1.0,Texcordinates,1.0);
+   //FragColor = vec4(vec3(gl_FragCoord.z),1.0);
+  // FragColor = vec4(0.0,Texcordinates,1.0);
    
 }
 

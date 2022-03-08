@@ -18,13 +18,42 @@ void App::RUN()
 	
 	Core::Shader shader (relpath + "/Electron/Stuff/vs.glsl", relpath + "/Electron/Stuff/fs.glsl");
 	shader.Bind();
-	Core::Model model (relpath + "/Electron/ASSETS/Model/csrtest.fbx");
+	Core::Model model (relpath + "/Electron/ASSETS/Model/torus3.fbx");
 	
 	Core::Camera camera(glm::vec3(0.0, 0.0, 3.0));
 
 
-
 	Transform tran(shader);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	
 
