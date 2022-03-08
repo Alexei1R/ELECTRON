@@ -18,50 +18,21 @@ void App::RUN()
 	
 	Core::Shader shader (relpath + "/Electron/Stuff/vs.glsl", relpath + "/Electron/Stuff/fs.glsl");
 	shader.Bind();
-	Core::Model model (relpath + "/Electron/ASSETS/Model/torus3.fbx");
+	Core::Model model (relpath + "/Electron/ASSETS/Model/torus4c.fbx");
 	
 	Core::Camera camera(glm::vec3(0.0, 0.0, 3.0));
 
 
+
 	Transform tran(shader);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
+	tran.scale(glm::vec3(0.1, 0.1, 0.1));
 
 	
 
 
 	int w, h;
-	
+	window.SetClearColor(glm::vec3(0.5,0.5,0.7));
 	while (!glfwWindowShouldClose(window.getGLFWwindow()))
 	{
 		glfwGetWindowSize(window.getGLFWwindow(),&w,&h);

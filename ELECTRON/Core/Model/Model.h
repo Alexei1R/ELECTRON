@@ -13,13 +13,11 @@ namespace Core
 	class Model
 	{
 	public:
-		int count = 0;
 		std::vector<Core::Mesh> meshes;
 		std::string directory;
 		std::vector<Texture> textures_loaded;
-		
+
 	public:
-		
 		Model(std::string path);
 		void Draw(Core::Shader& shader);
 

@@ -7,19 +7,17 @@ Core::Model::Model( std::string path)
 
 void Core::Model::Draw(Core::Shader& shader)
 {
-	std::cout <<"mesh size() :: "<< meshes.size() << std::endl;
+
 	for (unsigned int i = 0; i < meshes.size(); i++)
 	{
 		meshes[i].Draw(shader);
 	}
-	//meshes[1].Draw(shader);
-
 }
 
 void Core::Model::loadModel(std::string path)
 {
 	Assimp::Importer import;
-	const aiScene* scene = import.ReadFile(path, aiProcess_FlipUVs | aiProcess_CalcTangentSpace |
+	const aiScene* scene = import.ReadFile(path,aiProcess_FlipUVs |aiProcess_CalcTangentSpace |
 		aiProcess_Triangulate |
 		aiProcess_JoinIdenticalVertices |
 		aiProcess_SortByPType);
@@ -30,28 +28,24 @@ void Core::Model::loadModel(std::string path)
 	}
 	directory = path.substr(0, path.find_last_of("/"));
 
-
 	processNode(scene->mRootNode,scene);
 
 }
 
 void Core::Model::processNode(aiNode* node, const aiScene* scene)
 {
-	
+
 	for (unsigned int i = 0; i < node->mNumMeshes; i++)
 	{
 		aiMesh* mesh = scene->mMeshes[node->mMeshes[i]];
-		//meshes.push_back(processMesh(mesh, scene));
 		meshes.push_back(processMesh(mesh, scene));
-		//meshes.insert(std::end(meshes), std::begin(processMesh(mesh,scene)), std::end(meshes));
 	}
-
 	for (unsigned int i = 0; i < node->mNumChildren; i++)
 	{
 		processNode(node->mChildren[i], scene);
 	}
 
-	
+
 
 }
 
@@ -62,9 +56,6 @@ Core::Mesh Core::Model::processMesh(aiMesh* mesh, const aiScene* scene)
 	std::vector<unsigned int> indices;
 	std::vector<Texture> textures;
 
-
-	std::cout <<"nr de vertice ::" << mesh->mNumVertices << "count : "<< count << std::endl;
-	count++;
 	for (unsigned int  i = 0; i < mesh->mNumVertices; i++)
 	{
 		Vertex vertex;
