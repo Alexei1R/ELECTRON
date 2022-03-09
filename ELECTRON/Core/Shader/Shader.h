@@ -11,8 +11,9 @@ namespace Core
 
 	class Shader
 	{
-	private:
+	public:
 		unsigned int program;
+	private:
 		std::string vertexData;
 		std::string fragmentData;
 		std::unordered_map<std::string, int > m_UniformLocationCache;

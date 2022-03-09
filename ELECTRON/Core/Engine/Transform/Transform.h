@@ -35,6 +35,7 @@ public:
 
 	void UpdateCam(glm::mat4 viewmat, glm::vec3 camPos, glm::vec3 camFront, float w_height, float w_width);
 	void rotate(float angle, glm::vec3 vector);
+	void rotateRadians(float angle, glm::vec3 vector);
 	void transform(glm::vec3 vector);
 	void scale(glm::vec3 vector);
 	

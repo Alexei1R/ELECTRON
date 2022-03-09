@@ -34,9 +34,14 @@ void  Transform::UpdateCam(glm::mat4 viewmat, glm::vec3 camPos, glm::vec3 camFro
 }
 
 
-void Transform::rotate(float angle, glm::vec3 vector)
+void Transform::rotateRadians(float angle, glm::vec3 vector)
 {
 	model = glm::rotate(model,glm::radians(angle), vector);
+}
+
+void Transform::rotate(float angle, glm::vec3 vector)
+{
+	model = glm::rotate(model, angle, vector);
 }
 
 void Transform::transform(glm::vec3 vector)
