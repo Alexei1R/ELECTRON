@@ -30,13 +30,16 @@ namespace Core
         std::string directory;
         bool gammaCorrection;
 
-        Model(std::string const& path, bool gamma = false);
+        //Model(std::string const& path, bool gamma = false);
+        Model() {};
 
         void Draw(Core::Shader& shader);
 
-    private:
+    public:
         void loadModel(std::string const& path);
 
+
+    private:
         // processes a node in a recursive fashion. Processes each individual mesh located at the node and repeats this process on its children nodes (if any).
         void processNode(aiNode* node, const aiScene* scene);
 

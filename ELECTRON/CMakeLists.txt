@@ -6,6 +6,9 @@ cmake_minimum_required (VERSION 3.8)
 
 
 file(GLOB Filles 
+"${CMAKE_SOURCE_DIR}/ELECTRON/Gui/imgui/*.cpp"
+"${CMAKE_SOURCE_DIR}/ELECTRON/Gui/*.cpp"
+
 "${CMAKE_SOURCE_DIR}/ELECTRON/Aplication/*.cpp"
 "${CMAKE_SOURCE_DIR}/ELECTRON/Core/Window/*.cpp"
 "${CMAKE_SOURCE_DIR}/ELECTRON/Core/Camera/*.cpp"

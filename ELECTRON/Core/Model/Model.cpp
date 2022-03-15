@@ -1,11 +1,12 @@
 #include "Model/Model.h"
 
 
-Core::Model::Model(std::string const& path, bool gamma)
-    :gammaCorrection(gamma)
-{
-    loadModel(path);
-}
+//Core::Model::Model(std::string const& path, bool gamma)
+//    :gammaCorrection(gamma)
+//{
+//    loadModel(path);
+//}
+
 
 
 
@@ -33,6 +34,7 @@ void Core::Model::loadModel(std::string const& path)
 
     // process ASSIMP's root node recursively
     processNode(scene->mRootNode, scene);
+    std::cout << "model Loaded\n";
 }
 
 

@@ -18,7 +18,8 @@ void main()
 {
 	
  //FragColor = texture(material.texture_diffuse1,Texcordinates);// * vec4(1.0,Texcordinates,1.0);
-   FragColor = vec4(0.0,Texcordinates,1.0);
+   //FragColor = vec4(0.0,Texcordinates,1.0);
+   FragColor = vec4(mod(normalize(normal),0),1.0);
    
 }
 
