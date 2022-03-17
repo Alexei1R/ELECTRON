@@ -12,6 +12,10 @@
 #include "Engine/Transform/Transform.h"
 #include "Gui/Gui.h"
 
+#include "Model/stb_image.h"
+#include "Engine/CubeMap/Cubemap.h"
+
+
 
 
 void App::RUN()
@@ -22,11 +26,22 @@ void App::RUN()
 
 	Core::Shader shader1 (relpath + "/Electron/Stuff/vs.glsl", relpath + "/Electron/Stuff/f_light.glsl");
 	shader1.Bind();
+	shader1.SetUniform1i("skybox", 0);
 	Transform tran1(shader1);
 	Core::Model model1;
-	model1.loadModel(relpath + "/Electron/ASSETS/Model/car.fbx");
+	model1.loadModel(relpath + "/Electron/ASSETS/Model/mercedes.fbx");
+    tran1.rotateRadians(-90, glm::vec3(1.0, 0.0, 0.0));
+    tran1.scale(glm::vec3(0.01, 0.01, 0.01));
 	
-	
+	//cubemap test
+	//===========================================
+    Core::Shader skyboxShader(relpath + "/Electron/Stuff/v_sky.glsl", relpath + "/Electron/Stuff/f_sky.glsl");
+    Transform tran_sky(skyboxShader);
+	tran_sky.scale(glm::vec3(100.0, 100.0, 100.0));
+    std::string path_tex = relpath + "/Electron/ASSETS/skybox/";
+    Core::SkyBox sky(path_tex);
+    sky.SendUniformTexture(skyboxShader);
+
 	
 
 	//glEnable(GL_CULL_FACE);
@@ -39,6 +54,11 @@ void App::RUN()
 		window.Update();
 		camera.Update();
 		tran1.UpdateCam(camera.GetViewMatrix(), camera.GetCameraPos(), camera.GetCameraFront(),w,h);
+        tran_sky.UpdateCam(camera.GetViewMatrix(), camera.GetCameraPos(), camera.GetCameraFront(),w,h);
+
+
+
+		sky.Draw(skyboxShader);
 
 
 
@@ -48,12 +68,7 @@ void App::RUN()
 
 
 
-
-
-
-
-
-
+        
 
 
 		
@@ -73,6 +88,7 @@ void App::RUN()
 	}
 
 
-
-
 }
+
+
+

@@ -16,6 +16,8 @@ file(GLOB Filles
 "${CMAKE_SOURCE_DIR}/ELECTRON/Core/Event/*.cpp"
 "${CMAKE_SOURCE_DIR}/ELECTRON/Core/Model/*.cpp"
 "${CMAKE_SOURCE_DIR}/ELECTRON/Core/Engine/Transform/*.cpp"
+"${CMAKE_SOURCE_DIR}/ELECTRON/Core/Engine/CubeMap/*.h"
+"${CMAKE_SOURCE_DIR}/ELECTRON/Core/Engine/CubeMap/*.cpp"
 )
 
 
